@@ -1,0 +1,15 @@
+diff --git a/htdocs/sites/default/default.settings.php b/htdocs/sites/default/default.settings.php
+index 7e36a4a..d75afd7 100644
+--- a/htdocs/sites/default/default.settings.php
++++ b/htdocs/sites/default/default.settings.php
+@@ -584,3 +584,10 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  * Remove the leading hash sign to enable.
+  */
+ # $conf['theme_debug'] = TRUE;
++
++// Load environment specific settings.
++@include('settings.prod.php');
++@include('settings.preprod.php');
++@include('settings.qa.php');
++@include('settings.dev.php');
++@include('settings.local.php');
